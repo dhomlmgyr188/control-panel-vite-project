@@ -1,0 +1,20 @@
+// Config folder
+@use './config/colors';
+@use './config/layout';
+@use './config/variables';
+
+// utilites folder
+@use './utilites/spacing';
+
+// base folder
+@use './base/fonts';
+@use './base/global';
+@use './base/typography';
+@use './base/links';
+
+body{
+    background-color: colors.$color-background;
+}
+h1{
+    background-color: colors.$color-white;
+}

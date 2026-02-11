@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: local('Apercu Arabic Pro'), url('../../fonts/apercu-arabic-pro/ApercuArabicPro-Regular.woff2') format(woff2),
+         local('Apercu Arabic Pro'), url('../../fonts/apercu-arabic-pro/ApercuArabicPro-Regular.woff') format(woff);
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Apercu Arabic Pro';
+    src: local('Apercu Arabic Pro'), url('../../fonts/apercu-arabic-pro/ApercuArabicPro-Bold.woff2') format(woff2),
+         local('Apercu Arabic Pro'), url('../../fonts/apercu-arabic-pro/ApercuArabicPro-Bold.woff') format(woff);
+    font-weight: bold;
+    font-display: swap;
+}
+
+$family-heading: 'Apercu Arabic Pro', 'Helvetica Neue', 'Segoe UI', sans-serif;
+$family-content: -apple-system, BlinkMacSystemFont,'Helvetica Neue','Geeza pro', 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, sans-serif ;
