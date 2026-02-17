@@ -1,13 +1,190 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>control-panel-vite</title>
-  </head>
-  <body>
-    <h1>اهلا بالعالم</h1>
-    <button>hello</button>
-    <script type="module" src="/src/main.js"></script>
-  </body>
-</html>
+{{#> layout title='الصفحة الرئيسية' pageScript='/src/scripts/home.js'}}
+
+<div class="main-page">
+
+  <header class="hero-intro">
+    <h2 class="welcome-tag">
+      مرحبا بك عبدالرحمن, أتمنى انك تقضي وقتا ممتعاً <br>
+      في مشاهدة إحصائيات متجرك تابع اخر التغيرات ..
+    </h2>
+
+    <div class="c-summary">
+      <div class="c-summary__data">
+        <span class="c-summary__value">120</span>
+        <span class="c-summary__key">طلب</span>
+      </div>
+
+      <div class="c-summary__data">
+        <span class="c-summary__value">1234</span>
+        <span class="c-summary__key">زائر</span>
+      </div>
+
+      <div class="c-summary__data">
+        <span class="c-summary__value">4500$</span>
+        <span class="c-summary__key">مبيعات</span>
+      </div>
+    </div>
+  </header>
+
+  <ul class="c-actions">
+    <li class="c-action">
+      <span class="c-action__title">10 طلبات تحتاج معالجة</span>
+      <a href="" class="c-action__link c-btn c-btn--slim">مشاهدة الطلبات</a>
+    </li>
+    <li class="c-action">
+      <span class="c-action__title">5 رسائل تحتاج الاجابة</span>
+      <a href="" class="c-action__link c-btn c-btn--slim">مشاهدة الرسائل</a>
+    </li>
+    <li class="c-action">
+      <span class="c-action__title">5 منتجات على وشك النفاذ</span>
+      <a href="" class="c-action__link c-btn c-btn--slim">مشاهدة المنتجات</a>
+    </li>
+  </ul>
+
+  <div class="c-card">
+    <h3 class="c-card__title">معلومات الشحن غير متوفرة</h3>
+    <a href="#" class="c-btn c-btn--primary c-card__action">ربط معلومات الشحن</a>
+    <p class="c-card__desc">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Voluptas voluptatem assumenda debitis ex distinctio expedita beatae fugit.
+      Doloremque ipsum hic eos consectetur, vel qui, aliquid non itaque sint, alias omnis!
+    </p>
+  </div>
+
+  <div class="c-banner">
+    <h3 class="c-banner__title">بوابة الدفع عبر باي بال متاحة</h3>
+
+    <p class="c-banner__desc">
+      تم اضافة بوابة الدفع عبر بايونير لكل متاجر عربي, تستطيع ربط حسابك في بايونير لتستقبل الأموال عبرها ..
+    </p>
+
+    <a href="#" class="c-btn c-btn--ghost c-banner__action">شاهد المزيد</a>
+
+    <i class="fa-solid fa-flag c-banner__icon"></i>
+
+    <i class="fa-solid fa-circle-xmark c-banner__close js-banner-close"></i>
+  </div>
+
+  <div class="c-chart">
+    <header class="c-chart__header">
+      <div class="c-chart__header__title">
+        <h3 class="c-chart__title">المبيعات</h3>
+        <span class="c-chart__date">10 أكتوبر 2023</span>
+      </div>
+
+      <div class="c-summary c-summary--small c-summary--boxless c-summary--spaceless">
+        <div class="c-summary__data">
+          <span class="c-summary__key">التغيير الشهري</span>
+          <span class="c-summary__value c-summary__value-positive">%16.83</span>
+        </div>
+
+        <div class="c-summary__data">
+          <span class="c-summary__key">المجموع</span>
+          <span class="c-summary__value">$93389</span>
+        </div>
+
+        <div class="c-summary__data">
+          <span class="c-summary__key">اخر ثلاثين يوم</span>
+          <span class="c-summary__value">$1932</span>
+        </div>
+      </div>
+
+      <div class="c-table__navigation">
+        {{> nav-arrows}}
+      </div>
+    </header>
+
+    <canvas class="c-chart__data" id="example-chart" width="600" height="300"></canvas>
+  </div>
+
+  <div class="c-tabs js-tabs">
+    <div class="c-tabs__control">
+      <span class="c-tabs__tab js-tab-link is-active" data-index="orders">طلبات قيد المراجعة</span>
+      <span class="c-tabs__tab js-tab-link" data-index="products">منتجات على وشك النفاذ</span>
+      <span class="c-tabs__tab js-tab-link" data-index="clients">زبائن جدد</span>
+    </div>
+    <div class="c-tabs__content">
+      <span class="c-tabs__tabarea js-tab-area is-active" data-indexed="orders">
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+      </span>
+      <span class="c-tabs__tabarea js-tab-area" data-indexed="products">
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+      </span>
+      <span class="c-tabs__tabarea js-tab-area" data-indexed="clients">
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+        <div class="c-list">
+          <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+          <span class="c-list__data">تي شيرت لاكوست </span>
+          <span class="c-list__data">عبدالرحمن المغير</span>
+          <span class="c-list__data">المملكة العربية السعودية, المدينة المنورة</span>
+          <span class="c-list__data">73$</span>
+          <div class="c-list__actions">
+            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+          </div>
+        </div>
+
+      </span>
+    </div>
+  </div>
+
+</div>
+{{/layout}}

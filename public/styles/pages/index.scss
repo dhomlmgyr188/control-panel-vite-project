@@ -1,0 +1,23 @@
+@use '../config/layout.scss' as layout;
+@use '../utilites/spacing.scss' as spacing;
+
+.page-container{
+    padding-right: layout.$layout-sidebar + spacing.spacing('normal');
+    padding-left: spacing.spacing('normal');
+}
+
+.main-page{
+    background: url(../../images/confitti.svg) no-repeat top left;
+}
+
+.hero-intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: spacing.spacing('extra-wide');
+    margin-bottom: spacing.spacing('wide');
+    flex-wrap: wrap;
+}
+.welcome-tag {
+    font-size: 28px;
+}
