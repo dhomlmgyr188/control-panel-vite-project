@@ -1,0 +1,33 @@
+{{#> components-container title='Banner'}}
+    <div class="c-banner">
+        <h3 class="c-banner__title">بوابة الدفع عبر باي بال متاحة</h3>
+
+        <p class="c-banner__desc">
+            تم اضافة بوابة الدفع عبر بايونير لكل متاجر عربي, تستطيع ربط حسابك في بايونير لتستقبل الأموال عبرها ..
+        </p>
+
+        <a href="#" class="c-btn c-btn--ghost c-banner__action">شاهد المزيد</a>
+
+        <i class="fa-solid fa-flag c-banner__icon"></i>
+
+        <i class="fa-solid fa-circle-xmark c-banner__close js-banner-close"></i>
+    </div>
+
+    <script>
+        (function () {
+            const closeBanner = document.querySelectorAll('.js-banner-close');
+            closeBanner.forEach(closeBanner =>{
+                closeBanner.addEventListener('click', event =>{
+                    const banner = event.target.parentNode;
+                    banner.classList.add('collabse');
+
+                    banner.addEventListener('transitionend', function (event) {
+                        if (event.target === this) {
+                            this.remove();
+                        }
+                    })
+                })
+            })
+        })();
+    </script>
+{{/components-container}}

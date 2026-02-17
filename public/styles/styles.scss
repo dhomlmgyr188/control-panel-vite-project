@@ -5,6 +5,7 @@
 
 // utilites folder
 @use './utilites/spacing';
+@use './utilites/mixin-card';
 
 // base folder
 @use './base/fonts';
@@ -12,9 +13,6 @@
 @use './base/typography';
 @use './base/links';
 
-body{
-    background-color: colors.$color-background;
-}
-h1{
-    background-color: colors.$color-white;
-}
+// components folder
+@use './components/demo';
+@use './components/components';

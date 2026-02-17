@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use '../config/colors.scss' as colors;
+
+.c-btn{
+    display: inline-block;
+    color: colors.$color-content;
+    background-color: colors.$color-white;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 3px;
+    border: 1px solid color.adjust(colors.$color-white, $lightness: -15%);
+    box-shadow: 0 1px 0 0 rgba(color.adjust(colors.$color-content, $lightness: -30%), 0.05);
+    transition: all 0.15s ease;
+    cursor: pointer;
+
+    &:focus{
+        outline: none;
+        border: 2px solid colors.$color-content;
+    }
+
+    &:hover{
+        background-color: color.adjust(colors.$color-white, $lightness: -3%);
+    }
+}
+
+.c-btn--primary{
+    color: colors.$color-white;
+    background-color: colors.$color-primary;
+    border: 1px solid color.adjust(colors.$color-primary, $lightness: -5%);
+    
+    &:focus{
+        border-color: color.adjust(colors.$color-primary, $lightness: -10%);
+    }
+
+    &:hover{
+        background-color: color.adjust(colors.$color-primary, $lightness: -5%);
+    }
+}
+
+.c-btn--destructive{
+    color: colors.$color-white;
+    background-color: colors.$color-red;
+    border: 1px solid color.adjust(colors.$color-red, $lightness: -5%);
+    
+    &:focus{
+        border-color: color.adjust(colors.$color-red, $lightness: -10%);
+    }
+
+    &:hover{
+        background-color: color.adjust(colors.$color-red, $lightness: -5%);
+    }
+}
+
+.c-btn--ghost{
+    color: colors.$color-content;
+    background-color: transparent;
+    border: 1px solid colors.$color-content;
+
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+.c-btn--slim{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.c-btn--icon{
+    font-size: 20px;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+    padding: 0;
+}

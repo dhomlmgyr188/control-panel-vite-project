@@ -1,0 +1,63 @@
+
+{{#> components-container title='Upload'}}
+
+    <div class="c-upload js-upload">
+        <header class="c-upload__header">
+            <h4 class="c-upload__title">صورة المنتج</h4>
+            <label for="upload-image" class="c-upload__label c-upload__label--none">ارفع الصورة</label>
+            <span class="c-upload__label c-upload__label--remove js-upload-remove">احذف الصورة</span>
+        </header>
+        
+        <div class="c-upload__body">
+            <div class="c-upload__image">
+                <img class="js-upload-placeholder">
+            </div>
+            <input type="file" id="upload-image" class="c-upload__field js-upload-value" accept="image/*">
+            <span class="c-upload__subtitle">اسحب الصورة هنا لرفعها</span>
+        </div>
+    </div>
+
+    <div class="c-upload c-upload__small js-upload">
+        <header class="c-upload__header">
+            <h4 class="c-upload__title">صورة المستخدم</h4>
+        </header>
+
+        <div class="c-upload__body">
+            <label for="upload-image-small" class="c-upload__label c-upload__label--none">ارفع الصورة</label>
+            <img class="js-upload-placeholder">
+            <input type="file" id="upload-image-small" class="c-upload__field js-upload-value" accept="image/*">
+        </div>
+
+        <span class="c-upload__label c-upload__label--remove js-upload-remove">
+            احذف الصورة
+        </span>
+    </div>
+
+    <script>
+        (function () {
+            const uploaders = document.querySelectorAll('.js-upload');
+            Array.from(uploaders, (uploader) => {
+                const upload = uploader.querySelector('.js-upload-value'),
+                placeholder = uploader.querySelector('.js-upload-placeholder'),
+                remove = uploader.querySelector('.js-upload-remove');
+
+                upload.addEventListener('change', function (event) {
+                    const img = this.files[0];
+                    let reader = new FileReader();
+                    reader.readAsDataURL(img);
+
+                    reader.onloadend = () => {
+                        uploader.classList.add('has-image');
+                        placeholder.src = reader.result;
+                    }
+                });
+                
+                remove.addEventListener('click', () => {
+                    upload.value = null;
+                    uploader.classList.remove('has-image');
+                    placeholder.src = '';
+                });
+            });
+        })();
+    </script>
+{{/components-container}}

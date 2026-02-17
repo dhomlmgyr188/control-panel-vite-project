@@ -1,0 +1,79 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '../config/variables.scss' as variables;
+@use '../config/layout.scss' as layout;
+@use '../config/colors.scss' as  colors;
+@use '../utilites/mixin-card.scss' as mixin-card;
+@use '../utilites/spacing.scss' as spacing;
+
+$product-media-size: 40px;
+
+.c-table{
+    @include mixin-card.e-card;
+    padding: 0 0 spacing.spacing('normal') 0;
+    width: 100%;
+}
+
+.c-table__header{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: spacing.spacing('small');
+    padding: 0 spacing.spacing('normal');
+}
+
+.c-table__navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-table__actions{
+    margin-left: auto;
+}
+
+.c-table__navigation__arrows{
+    margin-right: spacing.spacing('small');
+}
+
+.c-table__footer{
+    display: flex;
+    padding-left: spacing.spacing('normal');
+    padding-top: spacing.spacing('normal');
+    flex-flow: row-reverse;
+}
+.c-table__title{
+    font-size: 20px;
+    color: colors.$color-dark;
+    margin-bottom: 0;
+    margin-left: spacing.spacing('small');
+    padding-top: spacing.spacing('normal');
+
+}
+
+.c-table__data{
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    th {
+        text-align: right;
+    }
+    td,th {
+        padding: spacing.spacing('extra-small');
+        border-bottom: 1px solid rgba(color.adjust(#fff, $lightness: -40%), 0.15);
+
+        img{
+            width: $product-media-size;
+            height: $product-media-size;
+            vertical-align: middle;
+        }
+    }
+}
+
+.c-table--select-all{
+    th,td {
+        &:first-child{
+            padding-right: spacing.spacing('normal');
+        }
+
+    }
+}

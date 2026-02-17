@@ -1,0 +1,53 @@
+{{#> components-container title='Tabs'}}
+
+    <div class="c-tabs js-tabs">
+        <div class="c-tabs__control">
+            <span class="c-tabs__tab js-tab-link is-active" data-index="orders">طلبات قيد المراجعة</span>
+            <span class="c-tabs__tab js-tab-link" data-index="products">منتجات على وشك النفاذ</span>
+            <span class="c-tabs__tab js-tab-link" data-index="clients">زبائن جدد</span>
+        </div>
+        <div class="c-tabs__content">
+            <span class="c-tabs__tabarea js-tab-area is-active" data-indexed="orders">Tap 1</span>
+            <span class="c-tabs__tabarea js-tab-area" data-indexed="products">Tap 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores natus dicta doloremque labore dolore adipisci voluptatem odit consequatur dolorum, magnam nam, libero sed, ipsa dolorem tenetur ipsum iure omnis possimus?</span>
+            <span class="c-tabs__tabarea js-tab-area" data-indexed="clients">Tap 3</span>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const tabs = document.querySelectorAll('.js-tabs');
+
+            Array.from(tabs, (tab) => {
+                const tabsLinks = tab.querySelectorAll('.js-tab-link');
+                let currentActiveTab =  tab.querySelector('.js-tab-link.is-active');
+                const toggleTab = (toggledTabLink = currentActiveTab) => {
+                    currentActiveTab = toggledTabLink;
+                    toggledTabLink.classList.toggle('is-active');
+
+                    const toggledTabData = toggledTabLink.dataset.index;
+                    const toggledTabArea = tab.querySelector(`.js-tab-area[data-indexed=${toggledTabData}]`);
+                    toggledTabArea.classList.toggle('is-active');
+
+                };
+
+                if (!currentActiveTab) {
+                    toggleTab(tabsLinks[0]);
+                }
+
+                tabsLinks.forEach(tabsLink => {
+                    tabsLink.addEventListener('click', function (event) {
+                        if (currentActiveTab === this) {
+                            return;
+                        }
+
+                        if (currentActiveTab) {
+                            toggleTab();
+                        }
+
+                        toggleTab(this);
+                    })
+                })
+            })
+        })();
+    </script>
+{{/components-container}}
