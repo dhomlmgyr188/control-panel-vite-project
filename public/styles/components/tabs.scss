@@ -1,14 +1,30 @@
+@use 'sass:color';
+@use 'sass:math';
 @use '../config/colors.scss' as colors;
 @use '../utilites/mixin-card.scss' as mixin-card;
 @use '../utilites/spacing.scss' as spacing;
+@use '../config/variables.scss' as variables;
+@use '../config/layout.scss' as layout;
 
 .c-tabs{
     @include mixin-card.e-card;
     width: 100%;
+    position: relative;
 }
 
 .c-tabs__control{
     display: flex;
+    overflow-x: auto;
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        content: '';
+        height: floor(variables.$line-height * variables.$font-base) + (spacing.spacing() * 2);
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
 }
 
 .c-tabs__tab{
@@ -17,6 +33,7 @@
     flex-grow: 1;
     cursor: default;
     border-bottom: 3px solid transparent;
+    white-space: pre;
 }
 
 .c-tabs__tab.is-active{
@@ -29,4 +46,13 @@
 
 .c-tabs__tabarea.is-active{
     display: block;
+}
+
+@media (max-width: layout.$bp-table-small) { 
+    .c-tabs__control{
+        &:before{
+            background: linear-gradient(90deg, rgba(0,0,0,0.1) 20px, transparent 30px);
+        }
+    }
+
 }

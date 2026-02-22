@@ -1,0 +1,59 @@
+{{#> layout title='الطلبات'}}
+
+<div class="single-page">
+    <header class="page-header">
+        <h1 class="page-title">الطلبات </h1>
+    </header>
+
+    <div class="c-table c-table--select-all">
+
+        {{#> table-header title='الطلبات' caption='6 من أصل 24'}}
+            <button class="c-btn c-btn--primary c-btn--slim">تم الشحن</button>
+            <button class="c-btn c-btn--slim">تتم المعالجة</button>
+            <button class="c-btn c-btn--destructive c-btn--slim">حذف</button>
+        {{/ table-header}}
+
+        <table class="c-table__data">
+            <thead>
+                <tr>
+                    {{> select-all}}
+                    <th>المنتج</th>
+                    <th>المشتري </th>
+                    <th>بند الشحن </th>
+                    <th>القيمة</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="c-list c-list--table-row">
+                    <td>
+                        <input type="checkbox" id="item-1">
+                    </td>
+                    <td>
+                        <img src="/images/lacoste.png" alt="t-shert lacoste" class="c-list__media">
+                    </td>
+                    <td class="c-list__data">تي شيرت لاكوست </td>
+                    <td class="c-list__data">عبدالرحمن المغير</td>
+                    <td class="c-list__data">المملكة العربية السعودية, المدينة المنورة</td>
+                    <td class="c-list__data">73$</td>
+                    <td>
+                        <div class="c-list__actions">
+                            <a href="#" class="c-btn c-btn--slim c-btn--primary">تم الشحن</a>
+                            <a href="#" class="c-btn c-btn--slim">تواصل</a>
+                            <a href="#" class="c-btn c-btn--slim c-btn--destructive">حذف الطلب</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="c-table__footer">
+            {{#> table-navigation caption='6 من أصل 24'}}
+            
+            {{/ table-navigation}}
+        </footer>
+
+    </div>
+</div>
+
+{{/ layout}}

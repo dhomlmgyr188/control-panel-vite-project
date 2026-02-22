@@ -2,6 +2,7 @@
 @use '../utilites/mixin-card.scss' as mixin-card;
 @use '../utilites/spacing.scss' as spacing;
 @use '../config/colors.scss' as colors;
+@use '../config/layout.scss' as layout;
 
 $color-banner: #00E09C;
 $color-banner-light: #49ffc8;
@@ -73,4 +74,26 @@ $icon-size: 32px;
 .c-banner.collabse{
     transform: scaleY(0);
     transform-origin: 50% 0;
+}
+
+@media (max-width: layout.$bp-phone-normal) {
+
+    .c-banner {
+        padding-left: spacing.spacing('small');
+        padding-right: spacing.spacing('small');
+    }
+
+    .c-banner__icon {
+        right: spacing.spacing('small');
+    }
+    .c-banner__close{
+        left: spacing.spacing('small');
+    }
+
+    .c-banner__title{
+        margin-left: spacing.spacing('wide');
+        margin-right: spacing.spacing('wide');
+    }
+
+
 }

@@ -1,15 +1,19 @@
 @use '../config/colors.scss' as colors;
 @use '../utilites/mixin-card.scss' as mixin-card;
 @use '../utilites/spacing.scss' as spacing;
+@use '../config/layout.scss' as layout;
+
+$upload-size: 400px;
 
 .c-upload{
     @include mixin-card.e-card;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 400px;
-    min-height: 400px;
+    min-width: $upload-size;
+    min-height: $upload-size;
     padding: spacing.spacing('normal') spacing.spacing('normal') spacing.spacing('wide'); 
+    margin-top: spacing.spacing('normal');
 }
 
 .c-upload__header{
@@ -107,5 +111,12 @@
         img {
             display: block;
         }
+    }
+}
+
+@media (max-width: $upload-size) {
+    .c-upload{
+        min-width: initial;
+        width: 100%;
     }
 }

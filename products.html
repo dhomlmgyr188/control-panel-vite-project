@@ -1,0 +1,65 @@
+{{#> layout title='المنتجات' }}
+
+<div class="single-page">
+    <header class="page-header">
+        <h1 class="page-title">المنتجات </h1>
+        <a href="/add-product.html" class="c-btn"> إضافة منتج</a>
+    </header>
+
+    <div class="c-table c-table--select-all">
+        {{#> table-header title='المنتجات' caption='6 من أصل 24'}}
+        <button class="c-btn c-btn--destructive c-btn--slim">حذف</button>
+        {{/ table-header}}
+
+
+        <table class="c-table__data">
+            <thead>
+                <tr>
+                    {{> select-all}}
+                    <th>المنتج</th>
+                    <th>السعر الرئيسي</th>
+                    <th>السعر المحلي</th>
+                    <th>الكمية</th>
+                    <th>المبيعات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="item-1">
+                    </td>
+                    <td>
+                        <img src="../public/images/lacoste.png">
+                    </td>
+                    <td>قميص أسود</td>
+                    <td>20$</td>
+                    <td>75 ر.س</td>
+                    <td>23</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="item-1">
+                    </td>
+                    <td>
+                        <img src="../public/images/lacoste.png">
+                    </td>
+                    <td>قميص أسود</td>
+                    <td>20$</td>
+                    <td>75 ر.س</td>
+                    <td>23</td>
+                    <td>44</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer class="c-table__footer">
+            {{#> table-navigation caption='6 من أصل 24'}}
+            
+            {{/ table-navigation}}
+        </footer>
+
+    </div>
+</div>
+
+{{/ layout }}

@@ -19,3 +19,7 @@
 
 // pages folder
 @use './pages/index.scss';
+@use './pages/single-page.scss';
+
+// hacks folder
+@use './hacks/add-product.scss';

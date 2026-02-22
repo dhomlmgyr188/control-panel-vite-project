@@ -1,0 +1,52 @@
+{{#> components-container title='form'}}
+<form action="" class="c-form">
+
+        <div class="c-form__control">
+            <div class="c-form__row">
+                <div class="c-textfield">
+                    <label for="product-name" class="c-textfield__label">اسم المنتج </label>
+                    <input type="text" id="product-name" class="c-textfield__input"
+                        placeholder="مثال: قميص ابيض, تي شيرت " required>
+                </div>
+            </div>
+            <div class="c-form__row">
+                <div class="c-textfield">
+                    <label for="product-price" class="c-textfield__label">سعر المنتج </label>
+                    <input type="number" step=".01"id="product-price" class="c-textfield__input c-textfield__input--left" placeholder="$" required>
+                </div>
+                <div class="c-textfield">
+                    <label for="secondary-product-price" class="c-textfield__label">السعر الثانوي </label>
+                    <input type="number" step=".01"id="secondary-product-price" class="c-textfield__input c-textfield__input--left" placeholder="ريال"
+                        required>
+                </div>
+            </div>
+            <div class="c-form__row">
+                <div class="c-textfield">
+                    <label for="product-description" class="c-textfield__label">وصف المنتج </label>
+                    <textarea id="product-description" class="c-textfield__textarea"
+                        placeholder="ادخل الوصف"></textarea>
+                </div>
+            </div>
+            <div class="c-form__row">
+                <div class="c-textfield">
+                    <label for="height" class="c-textfield__label">الأبعاد </label>
+                    <input type="number" step=".01"id="height" class="c-textfield__input" required>
+                    <span class="c-textfield__hint">بالسنيتم </span>
+                </div>
+                <div class="c-textfield">
+                    <label for="width" class="c-textfield__label"><br> </label>
+                    <input type="number" step=".01"id="width" class="c-textfield__input" required>
+                </div>
+                <div class="c-textfield">
+                    <label for="depth" class="c-textfield__label">العمق </label>
+                    <input type="number" step=".01" id="depth" class="c-textfield__input" required>
+                </div>
+                <div class="c-textfield">
+                    <label for="weight" class="c-textfield__label">الوزرن </label>
+                    <input type="number" step=".01"id="weight" class="c-textfield__input" required>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{{/components-container}}

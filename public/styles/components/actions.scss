@@ -15,6 +15,7 @@ $indicator-size: 10px;
 .c-action{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: calc(spacing.spacing('extra-small') / 2) spacing.spacing('extra-small');
     border-bottom: 1px solid rgba(color.adjust(colors.$color-brand, $lightness: -40%), 0.1);
 
