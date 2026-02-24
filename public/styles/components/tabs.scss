@@ -20,7 +20,7 @@
         position: absolute;
         width: 100%;
         content: '';
-        height: floor(variables.$line-height * variables.$font-base) + (spacing.spacing() * 2);
+        height: math.floor(variables.$line-height * variables.$font-base) + (spacing.spacing() * 2);
         left: 0;
         top: 0;
         pointer-events: none;
