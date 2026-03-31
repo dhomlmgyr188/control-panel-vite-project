@@ -1,0 +1,27 @@
+@use 'sass:color';
+@use '../utilites/spacing.scss' as spacing;
+@use '../config/colors.scss' as colors;
+
+.c-help{
+    display: flex;
+    align-items: center;
+    border-radius: spacing.spacing('small') * 2;
+    background-color: colors.$color-white;
+    border: 1px solid rgba(color.adjust(colors.$color-primary, $lightness: -30%), 0.15);
+    padding: spacing.spacing();
+    margin: spacing.spacing('wide') auto;
+    width: fit-content;
+}
+
+.c-help__icon{
+    font-size: 20px;
+    color: colors.$color-primary;
+    margin-left: spacing.spacing('extra-small');
+}
+.c-help__info{
+    color: colors.$color-dark;
+}
+
+.c-help__link{
+    color: colors.$color-link;
+}

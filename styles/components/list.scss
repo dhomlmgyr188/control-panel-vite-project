@@ -1,0 +1,67 @@
+@use 'sass:color';
+@use '../utilites/spacing.scss' as spacing;
+@use '../config/colors.scss' as colors;
+@use '../config/layout.scss' as layout; 
+
+$container-horizontal-spacing: spacing.spacing('extra-small');
+
+.c-list{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    padding: spacing.spacing('extra-small') spacing.spacing('small');
+    box-shadow: 0 0 0 1px rgba(black, 0.05);
+}
+
+.c-list__media{
+    height: 60px;
+    margin-left: spacing.spacing('small');
+    width: auto;
+}
+
+.c-list__data{
+    flex-grow: 1;
+    margin-left: spacing.spacing('small');
+}
+
+.c-list__actions{
+    margin-right: 0;
+    margin-left: spacing.spacing('small');
+    text-align: left;
+    opacity: 0;
+    transition: all 200ms ease;
+}
+
+.c-list:hover .c-list__actions{
+    opacity: 1;
+}
+
+.c-list--table-row{
+    display: table-row;
+}
+
+@media (max-width: layout.$bp-table-small) {
+
+    .c-list{
+        flex-wrap: wrap;
+        
+        .c-list__actions{
+            opacity: 1;
+            text-align: right;
+        }
+
+        .c-list__data:not(:first-of-type),
+        .c-list__actions {
+            width: 100%;
+            border-top: 1px solid rgba(color.adjust(#fff, $lightness: -40%), 0.15);
+            padding-top: spacing.spacing('extra-small');
+            padding-bottom: spacing.spacing('extra-small');
+            margin-right: - $container-horizontal-spacing;
+            margin-left: - $container-horizontal-spacing;
+            padding-right: $container-horizontal-spacing;
+            padding-left: $container-horizontal-spacing;
+
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use 'sass:color';
+@use '../utilites/mixin-card.scss' as mixin-card;
+@use '../utilites/spacing.scss' as spacing;
+@use '../config/colors.scss' as colors;
+
+$indicator-size: 10px;
+
+.c-actions{
+    @include mixin-card.e-card;
+    width: 100%;
+    list-style: none;
+    padding: 0 spacing.spacing('extra-small');
+}
+
+.c-action{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: calc(spacing.spacing('extra-small') / 2) spacing.spacing('extra-small');
+    border-bottom: 1px solid rgba(color.adjust(colors.$color-brand, $lightness: -40%), 0.1);
+
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+.c-action__title{
+    font-size: 14px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.c-action__title::before{
+    content: '';
+    width: $indicator-size;
+    height: $indicator-size;
+    border-radius: calc($indicator-size / 2);
+    background-color: colors.$color-brand;
+    margin-left: spacing.spacing();
+}
+
+.c-action__title,
+.c-action__link{
+    margin-bottom: calc(spacing.spacing('extra-small') / 2);
+    margin-top: calc(spacing.spacing('extra-small') / 2);
+}
